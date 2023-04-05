@@ -1,4 +1,4 @@
-//enter and dsiplay array
+//enter and display array
 #include <stdio.h>
 void create_Array(int a[],int n){
     int i;
