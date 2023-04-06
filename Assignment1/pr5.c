@@ -2,14 +2,14 @@
 #include <stdio.h>
 void create_Mark(int a[],int n){
     int i;
-    printf("Enter the elements of the array:\n");
+    printf("Enter the marks secured by the students:\n");
     for(i=0;i<n;i++){
         scanf("%d",&a[i]);
     }
 }
 void display_Mark(int a[],int n){
     int i;
-    printf("The elements of array:\n");
+    printf("The marks secured by the students:\n");
     for(i=0;i<n;i++){
         printf("%d\t",a[i]);
     }
