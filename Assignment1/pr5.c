@@ -42,12 +42,13 @@ void sum_Mark(int a[],int n){
         printf("\nThe sum of the marks:%d",sum);
     }
 void avg_Mark(int a[],int n){
-    int i,sum=0,avg;
+    int i,sum=0;
+    float avg;
     for(i=0;i<n;i++){
         sum+=a[i];
         }
         avg=sum/n;
-        printf("\nThe average of the marks is %d",avg);
+        printf("\nThe average of the marks is %.2f",avg);
     }
 int main(){
     int a[100],n;
