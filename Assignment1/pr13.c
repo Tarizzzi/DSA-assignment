@@ -31,7 +31,7 @@ void binary_Search(int a[],int n){
         }
     }
     else if(k<n/2){
-        for(n=0;i<n/2;i++){
+        for(i=0;i<n/2;i++){
             if(a[i]==k){
                 printf("%d is found at %d position",k,i+1);{
                     flag=2;
