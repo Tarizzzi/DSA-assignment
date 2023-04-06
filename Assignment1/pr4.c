@@ -1,4 +1,4 @@
-//copy and display from another array
+//reverse array
 #include <stdio.h>
 void create_Array(int a[],int n){
     int i;
