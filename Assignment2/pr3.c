@@ -1,4 +1,4 @@
-//value and address of variable with pointer
+//area and perimeter of rectangle
 #include <stdio.h>
 int area(int *p,int*q){
     int a=(*p)*(*q);
