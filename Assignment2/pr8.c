@@ -1,7 +1,7 @@
-//array input and display using pointers
-#include<stdlib.h>
+//reversing array using pointer
 #include<stdio.h>
-int* create_Array(int *a,int n){
+#include<stdlib.h>
+int *create_Array(int *a,int n){
     int i;
     a=(int*)malloc(n*sizeof(int));
     printf("Enter the elements of the array:\n");
@@ -17,7 +17,7 @@ void display_Array(int *a,int n){
         printf("%d\t",*(a+i));
     }
 }
-int reverse(int *a,int n){
+int *reverse(int *a,int n){
     int i,j,c;
     for(i=0,j=n-1;i<n/2;i++,j--){
         c=*(a+i);
@@ -28,6 +28,7 @@ int reverse(int *a,int n){
 }
 void display_Reversed_Array(int *a,int n){
     int i;
+    printf("\nThe reversed array:\n");
     for(i=0;i<n;i++){
         printf("%d\t",*(a+i));
     }
