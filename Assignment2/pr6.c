@@ -1,4 +1,5 @@
 //array input and display using pointers
+#include<stdlib.h>
 #include<stdio.h>
 int* create_Array(int *a,int n){
     int i;
