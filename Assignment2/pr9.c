@@ -16,7 +16,7 @@ void display_Array(int *a,int n){
         printf("%d\t",*(a+i));
     }
 }
-int *sort_Array(int *a,int n){
+void sort_Array(int *a,int n){
     int i,j,c;
     for(i=0;i<n;i++){
         for(j=0;j<n-1;j++){
@@ -51,29 +51,29 @@ void linear_Search(int *a,int n){
     }
 }
 int main(){
-    int *a,n,c,i;
+    int *a,n,choice;
     printf("Enter the lenght of the array:");
     scanf("%d",&n);
-    printf("Enter your choice:");
-    scanf("%d",&c);
-    switch(c){
-        case 1:
-        a=create_Array(a,n);
-        break;
-        case 2:
-        a=create_Array(a,n);
-        display_Array(a,n);
-        break;
-        case 3:
-        a=create_Array(a,n);
-        display_Array(a,n);
-        a=sort_Array(a,n);
-        break;
-        case 4:
-        a=create_Array(a,n);
-        display_Array(a,n);
-        a=sort_Array(a,n);
-        linear_Search(a,n);
+    do{
+        printf("Enter your choice:");
+        scanf("%d",&choice);
+        switch(choice){
+            case 1:
+            a=create_Array(a,n);
+            break;
+            case 2:
+            display_Array(a,n);
+            break;
+            case 3:
+            sort_Array(a,n);
+            break;
+            case 4:
+            linear_Search(a,n);
+            break;
+            defalut:
+            printf("Invalid choice");
+        }
     }
+    while(choice!=5);
     return 0;
 }
