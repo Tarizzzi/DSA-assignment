@@ -1,4 +1,4 @@
-//array input and display using pointers
+//array input and display sum using pointers
 #include<stdlib.h>
 #include<stdio.h>
 int* create_Array(int *a,int n){
