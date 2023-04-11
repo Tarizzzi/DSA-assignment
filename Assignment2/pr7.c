@@ -17,10 +17,10 @@ void display_Array(int *a,int n){
         printf("%d\t",*(a+i));
     }
 }
-int sum(int *p,int n){
+int sum(int *a,int n){
     int i,sum=0;
     for(i=0;i<n;i++){
-        sum+=*(p+i);
+        sum+=*(a+i);
     }
     return sum;
 }
