@@ -53,11 +53,11 @@ void linear_Search(int *a,int n){
 int main(){
     int *a,n,choice;
     do{
-        printf("create an array: 1\n");
-        printf("display the array: 2\n");
-        printf("sort the array(in ascending order): 3\n");
-        printf("search an element in the array: 4\n");
-        printf("Exit: 5\n");
+        printf("for creating an array: 1\n");
+        printf("for displaying  the array: 2\n");
+        printf("for sorting the array in ascending order: 3\n");
+        printf("for searching an element in the array: 4\n");
+        printf("for exiting the menu: 5\n");
         printf("Enter your choice:");
         scanf("%d",&choice);
         switch(choice){
