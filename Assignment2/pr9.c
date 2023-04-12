@@ -52,13 +52,18 @@ void linear_Search(int *a,int n){
 }
 int main(){
     int *a,n,choice;
-    printf("Enter the lenght of the array:");
-    scanf("%d",&n);
     do{
+        printf("create an array: 1\n");
+        printf("display the array: 2\n");
+        printf("sort the array(in ascending order): 3\n");
+        printf("search an element in the array: 4\n");
+        printf("Exit: 5\n");
         printf("Enter your choice:");
         scanf("%d",&choice);
         switch(choice){
             case 1:
+            printf("Enter the lenght of the array:");
+            scanf("%d",&n);
             a=create_Array(a,n);
             break;
             case 2:
@@ -69,6 +74,9 @@ int main(){
             break;
             case 4:
             linear_Search(a,n);
+            break;
+            case 5:
+            printf("program exited");
             break;
             defalut:
             printf("Invalid choice");
