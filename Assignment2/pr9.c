@@ -10,11 +10,11 @@ int *create_Array(int *a,int n){
 	}
 	return a;
 }
-void display_Array(int *b,int n){
+void display_Array(int *a,int n){
 	int i;
 	printf("\nThe elements of the array:\n");
 	for(i=0;i<n;i++){
-		printf("%d\t",*(b+i));
+		printf("%d\t",*(a+i));
 	}
 }
 int *sort_Array(int *a,int n){
