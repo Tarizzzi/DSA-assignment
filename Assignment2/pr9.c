@@ -17,7 +17,7 @@ void display_Array(int *b,int n){
 		printf("%d\t",*(b+i));
 	}
 }
-void sort_Array(int *a,int n){
+int *sort_Array(int *a,int n){
 	int i,j,c;
 	for(i=0;i<n;i++){
 		for(j=0;j<n;j++){
@@ -28,28 +28,22 @@ void sort_Array(int *a,int n){
 			}
 		}
 	}
-	printf("\nThe sorted array:\n");
-	for(i=0;i<n;i++){
-		printf("%d\t",*(a+i));
-	}
+	return a;
 }
-void linear_Search(int *a,int n){
-	int i,k,flag=0;
-	printf("\nEnter the element you want to search:");
-	scanf("%d",&k);
+int linear_Search(int *a,int n,int k){
+	int i,flag=0;
 	for(i=0;i<n;i++){
 		if(*(a+i)==k){
-			printf("\nThe element %d is found at %d index",k,i);
-			flag=1;
-			break;
+		    flag=1;
+		    return i;
 		}
 	}
 	if(flag==0){
-		printf("\nThe element not found");
+	printf("\nThe element not found");   
 	}
 }
 int main(){
-	int *a,n,choice;
+	int *a,n,choice,i,k;
 	do{	
 		printf("\nMENU:");
 		printf("\n1: create an array");
@@ -69,10 +63,17 @@ int main(){
 				display_Array(a,n);
 				break;
 			case 3:
-				sort_Array(a,n);
+				a=sort_Array(a,n);
+				printf("\nThe sorted array:\n");
+	            for(i=0;i<n;i++){
+		            printf("%d\t",*(a+i));
+	            }
 				break;
 			case 4:
-				linear_Search(a,n);
+			    printf("\nEnter the element you want to search:");
+	            scanf("%d",&k);
+				i=linear_Search(a,n,k);
+			    printf("\nThe element %d is found at %d index",k,i);
 				break;
 			case 5:
 				printf("\nProgram terminated\n\n");
