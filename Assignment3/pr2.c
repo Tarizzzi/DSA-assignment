@@ -39,6 +39,7 @@ void display_SM(int a[][3],int b[][max]){
             printf("%d\t",b[i][j]);
         }
         printf("\n");
+    }
 }
 int main(){
     int a[max][3],b[max][max],m;
