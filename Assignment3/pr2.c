@@ -1,6 +1,6 @@
 //triplet to sparse
 #include<stdio.h>
-#define MAX 20
+#define max 20
 void read_Triplet(int a[][3],int m){
     int i,j;
     printf("Enter the elements of the triplet:\n");
@@ -10,7 +10,8 @@ void read_Triplet(int a[][3],int m){
         }
     }
 }
-display_Triplet(int a[][3],int m){
+void display_Triplet(int a[][3],int m){
+    int i,j;
     printf("The input triplet matrix:\n");
     for(i=0;i<m;i++){
         for(j=0;j<3;j++){
@@ -19,7 +20,7 @@ display_Triplet(int a[][3],int m){
         printf("\n");
     }
 }
-void convert_SM(int a[][3],int m,int b[][max){
+void convert_SM(int a[][3],int m,int b[][max]){
     int i,j;
     for(i=0;i<a[0][0];i++){
         for(j=0;j<a[0][1];j++){
@@ -30,7 +31,7 @@ void convert_SM(int a[][3],int m,int b[][max){
         b[a[i][0]][a[i][1]]=a[i][2];
         }
 }
-void display_SM(int a[][3],int b[max][max]){
+void display_SM(int a[][3],int b[][max]){
     int i,j;
     printf("The sparse matrix:\n");
     for(i=0;i<a[0][0];i++){
