@@ -31,8 +31,9 @@ void display_Sparse(int tt[][3]){
     printf("Tranpose of the triplet:\n");
     for(i=0;i<tt[0][2]+1;i++){
         for(j=0;j<3;j++){
-            printf("%d",tt[i][j]);
+            printf("%d\t",tt[i][j]);
         }
+        printf("\n");
     }
 }
 int main(){
