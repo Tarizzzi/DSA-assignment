@@ -5,7 +5,6 @@ int stack[max],top=-1;
 void push(int ele){
     if(top==max-1){
         printf("\nstack overflow");
-        exit (0);
     }
     else{
         top=top+1;
@@ -16,7 +15,6 @@ int pop(){
     int ele;
     if(top==-1){
         printf("\nstack underflow");
-        exit (0);
     }
     else{
         ele=stack[top];
