@@ -1,6 +1,7 @@
 //push and pop in stacka
 #include<stdio.h>
-#define max 10
+#include<stdlib.h>
+#define max 3
 int stack[max],top=-1;
 void push(int ele){
     if(top==max-1){
@@ -37,10 +38,11 @@ int main(){
             break;
             case 2:
             x=pop();
-            printf("popped element:%d\ntop element:%d",x,stack[top]);
+            printf("\npopped element:%d\ntop element:%d",x,stack[top]);
             break;
             case 3:
             printf("\nprogram terminated");
+            exit(0);
         }
     }
     while(ch!=3);
