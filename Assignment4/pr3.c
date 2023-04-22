@@ -1,3 +1,4 @@
+//decimal to (binary),(octal),(hexadecimal)
 #include<stdio.h>
 #include<stdbool.h>
 #define max 20
