@@ -36,7 +36,7 @@ void convert_Binary(int ele){
         ele=ele/2;
         c++;
     }
-    printf("\nThe number in binary form:");
+    printf("The number in binary form:");
     for(i=0;i<c;i++){
         a[i]=pop();
         printf("%d",a[i]);
