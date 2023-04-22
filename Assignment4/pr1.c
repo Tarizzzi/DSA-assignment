@@ -1,25 +1,36 @@
-//push and pop in stacka
+//isfull,isempty,push,pop in stack(menu driven program)
 #include<stdio.h>
 #include<stdlib.h>
-#define max 3
+#include<stdbool.h>
+#define max 10
 int stack[max],top=-1;
+bool is_Full(){
+    if(top==max-1)
+    return 1;
+    else
+    return 0;
+}
+bool is_Empty(){
+    if(top==-1)
+    return 1;
+    else
+    return 0;
+}
 void push(int ele){
-    if(top==max-1){
+    if(is_Full()){
         printf("\nstack overflow");
     }
     else{
-        top=top+1;
-        stack[top]=ele;
+        stack[++top]=ele;
     }
 }
 int pop(){
     int ele;
-    if(top==-1){
+    if(is_Empty()){
         printf("\nstack underflow");
     }
     else{
-        ele=stack[top];
-        top=top-1;
+        ele=stack[top--];
     }
     return ele;
 }
