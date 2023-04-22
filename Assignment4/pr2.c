@@ -20,6 +20,7 @@ bool is_Empty(){
 void push(char ele){
     if(is_Full()){
         printf("\nstack overflow");
+        exit(0);
     }
     else{
         stack[++top]=ele;
@@ -29,6 +30,7 @@ char pop(){
     char ele;
     if(is_Empty()){
         printf("\nstack underflow");
+        exit(0);
     }
     else{
         ele=stack[top--];
