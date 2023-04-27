@@ -43,7 +43,7 @@ int main(){
     int x,ch,stack[max];
     do{
         printf("\nstack operation");
-        printf("\n1:push\n2:pop\n3:exit");
+        printf("\n1:push\n2:pop\n3:display top element\n4:exit");
         printf("\nenter your choice:");
         scanf("%d",&ch);
         switch(ch){
