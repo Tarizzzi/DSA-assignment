@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<stdbool.h>
 #define max 10
-int stack[max],top=-1;
+int top=-1;
 bool is_Full(){
     if(top==max-1)
     return 1;
@@ -16,7 +16,7 @@ bool is_Empty(){
     else
     return 0;
 }
-void push(int ele){
+void push(int stack[],int ele){
     if(is_Full()){
         printf("\nstack overflow");
     }
@@ -24,7 +24,7 @@ void push(int ele){
         stack[++top]=ele;
     }
 }
-int pop(){
+int pop(int stack[]){
     int ele;
     if(is_Empty()){
         printf("\nstack underflow");
@@ -34,8 +34,13 @@ int pop(){
     }
     return ele;
 }
+int display(int stack[]){
+    int ele;
+    ele=stack[top];
+    return ele;
+}
 int main(){
-    int x,ch;
+    int x,ch,stack[max];
     do{
         printf("\nstack operation");
         printf("\n1:push\n2:pop\n3:exit");
@@ -45,13 +50,16 @@ int main(){
             case 1:
             printf("\nEnter the element to be pushed:");
             scanf("%d",&x);
-            push(x);
+            push(stack,x);
             break;
             case 2:
-            x=pop();
-            printf("\npopped element:%d\ntop element:%d",x,stack[top]);
+            x=pop(stack);
+            printf("\npopped element:%d",x);
             break;
             case 3:
+            x=display(stack);
+            printf("\ntop element:%d",x);
+            case 4:
             printf("\nprogram terminated");
             exit(0);
         }
