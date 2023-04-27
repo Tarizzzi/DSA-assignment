@@ -34,11 +34,6 @@ int pop(int stack[]){
     }
     return ele;
 }
-int display(int stack[]){
-    int ele;
-    ele=stack[top];
-    return ele;
-}
 int main(){
     int x,ch,stack[max];
     do{
@@ -57,8 +52,8 @@ int main(){
             printf("\npopped element:%d",x);
             break;
             case 3:
-            x=display(stack);
-            printf("\ntop element:%d",x);
+            printf("\ntop element:%d",stack[top]);
+            break;
             case 4:
             printf("\nprogram terminated");
             exit(0);
