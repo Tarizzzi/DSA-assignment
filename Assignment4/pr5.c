@@ -43,7 +43,7 @@ void check_Balanced(char s[]){
         push(r);
         else if(r==')'){
             if(top==-1){
-                printf("unbalanced");
+                printf("unbalanced equation");
                 exit(0);
             }
             else
@@ -51,9 +51,9 @@ void check_Balanced(char s[]){
         }
     }
     if(top==-1)
-        printf("matched");
+        printf("balanced equation");
     else
-        printf("unmatched");
+        printf("unbalanced equation");
 }
 int main(){
     char s[max];
