@@ -64,6 +64,6 @@ int main(){
             exit(0);
         }
     }
-    while(ch!=3);
+    while(ch!=4);
     return 0;
 }
