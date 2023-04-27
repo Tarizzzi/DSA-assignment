@@ -31,7 +31,7 @@ char pop(){
     return ele;
 }
 void convert_Decimal(int n,int base){
-    char r;
+    char r,x;
     while(n!=0){
         r=n%base;
         switch(r){
@@ -59,13 +59,13 @@ void convert_Decimal(int n,int base){
         n=n/base;
     }
     while(top!=-1){
-        printf("%s",pop());
+        printf("%c",pop());
     }
 }
 int main(){
     int n,base;
     printf("Enter the number and its base:");
-    scanf("%d",&n,&base);
+    scanf("%d%d",&n,&base);
     convert_Decimal(n,base);
     return 0;
 }
