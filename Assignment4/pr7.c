@@ -45,7 +45,7 @@ int operate(char op){
     }
 }
 void postfix_Evaluation(char postfix[]){
-    char ch;
+    char ch,n;
     int i,op1,op2;
     for(i=0;postfix[i]!='\0';i++){
         ch=postfix[i];
@@ -53,35 +53,42 @@ void postfix_Evaluation(char postfix[]){
         push(ch);
         else if(isalpha(ch)){
             printf("Enter the value:");
-            scanf("%c",&ch);
-            push(ch);
+            scanf("%c",&n);
+            push(n);
         }
         else if(operate(ch)){
             op2=pop()-48;
             op1=pop()-48;
             switch(ch){
                 case '^':
-                push(pow(op1,op2));
+                n=pow(op1,op2);
+                push(n+48);
                 break;
                 case '*':
-                push(op1*op2);
+                n=op1*op2;
+                push(n+48);
                 break;
                 case '/':
-                push(op1/op2);
+                n=op1/op2;
+                push(n+48);
                 break;
                 case '%':
-                push(op1%op2);
+                n=op1%op2;
+                push(n+48);
                 break;
                 case '+':
-                push(op1+op2);
+                n=op1+op2;
+                push(n+48);
                 break;
                 case '-':
-                push(op1-op2);
+                n=op1-op2;
+                push(n+48);
                 break;
             }
         }
     }
-    printf("The result of the postfix expression:%c",pop()-48);
+    n=pop()-48;
+    printf("The result of the postfix expression:%d",n);
 }
 int main(){
     char postfix[max];
