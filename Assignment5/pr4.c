@@ -1,3 +1,4 @@
+//queue using 2 stack(display not working)
 #include<stdio.h>
 #include<stdbool.h>
 #include<stdlib.h>
@@ -45,7 +46,7 @@ void display(QUEUE *a1,QUEUE *a2){
     a2->a[++(a2->top)]=a1->a[(a1->top)--];
     printf("The queue:\n");
     for(i=(a2->top);i>=0;i--)
-    printf("%d\t",a2->a[a2->top]);
+    printf("%d\t",a2->a[i]);
     while(a2->top!=-1)
     a1->a[++(a1->top)]=a2->a[(a2->top)--];
 }
