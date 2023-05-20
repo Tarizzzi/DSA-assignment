@@ -46,8 +46,10 @@ void display(QUEUE *a1,QUEUE *a2){
     int i;
     if(is_Empty(a1))
     printf("no element to display");
-    else
-    a2->a[++(a2->top)]=a1->a[(a1->top)--];
+    else{
+        while(a1->top!=-1)
+        a2->a[++(a2->top)]=a1->a[(a1->top)--];
+    }
     printf("The queue:\n");
     for(i=(a2->top);i>=0;i--)
     printf("%d\t",a2->a[i]);
