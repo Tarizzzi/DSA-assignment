@@ -1,4 +1,4 @@
-//queue using 2 stack(display not working)
+//queue using 2 stacks
 #include<stdio.h>
 #include<stdbool.h>
 #include<stdlib.h>
@@ -31,10 +31,14 @@ void insert(QUEUE *a1,int n){
 }
 void remov(QUEUE *a1,QUEUE *a2){
     int i,n;
-    while(a1->top!=-1)
-    a2->a[++(a2->top)]=a1->a[(a1->top)--];
-    n=a2->a[(a2->top)--];
-    printf("The deleted element is %d",n);
+    if(is_Empty(a1))
+    printf("queue underflow");
+    else{
+        while(a1->top!=-1)
+        a2->a[++(a2->top)]=a1->a[(a1->top)--];
+        n=a2->a[(a2->top)--];
+        printf("The deleted element is %d",n);
+    }
     while(a2->top!=-1)
     a1->a[++(a1->top)]=a2->a[(a2->top)--];
 }
