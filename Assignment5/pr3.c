@@ -18,8 +18,10 @@ bool is_Full(){
 void insert(int n){
     if(is_Full())
     printf("Queue overflow");
-    else
-    queue[++rear]=n;
+    else{
+        rear=(rear+1)%max;
+        queue[rear]=n;
+    }
     if(front==-1)
     front=0;
 }
