@@ -51,6 +51,16 @@ void display(){
         printf("%d",queue[rear]);
     }
 }
+int count(){
+    int cnt;
+    if(rear>front)
+    cnt=rear-front+1;
+    else if(rear<front)
+    cnt=max-front+rear+1;
+    else if(rear==front)
+    cnt=1;
+    return cnt;
+}
 int  main(){
     int ch,n;
     do{
@@ -76,9 +86,9 @@ int  main(){
             display();
             break;
             case 4:
-//            n=count();
-//            printf("The number of elements of the queue: %d",n);
-//            break;
+            n=count();
+            printf("The number of elements of the queue: %d",n);
+            break;
             case 5:
             printf("PROGRAM TERMINATED");
             exit(0);
