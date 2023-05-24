@@ -51,6 +51,7 @@ void fwd_Traverse(Node *head){
     printf("no element");
     else{
         temp=head;
+        printf("The content of the linked list");
         while(temp->next!=NULL){
             printf("%d\t",temp->info);
             temp=temp->next;
@@ -59,7 +60,8 @@ void fwd_Traverse(Node *head){
     }
 }
 int main(){
-    int ch,n;
+    int ch,data;
+    Node *n;
     do{
         printf("\nmenu:-\n");
         printf("1:create node\n2:create list\n3:forward traverse\n4:exit\n");
@@ -67,16 +69,16 @@ int main(){
         scanf("%d",&ch);
         switch(ch){
             case 1:
+            printf("Enter the data:");
+            scanf("%d",&data);
+            n=create_Node(data);
+            case 2:
             printf("Enter the element to be inserted in the linked list:");
             scanf("%d",&n);
             create_List(n);
             break;
-            case 2:
-            n=delete();
-            printf("The deleted element:%d",n);
-            break;
             case 3:
-            display();
+            fwd_Traverse(n);
             break;
             case 4:
             printf("program terminated");
