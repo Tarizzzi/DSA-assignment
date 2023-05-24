@@ -6,11 +6,11 @@
 struct node{
     int info;
     struct node *next;
-}Node;
-Node *create_Node(){
+}NODE;
+NODE *create_Node(){
     int data;
-    Node *n;
-    n=(Node*)malloc(sizeof(Node));
+    NODE *n;
+    n=(NODE*)malloc(sizeof(NODE));
     if(n==NULL){
         printf("no memory allocated");
         exit(0);
@@ -23,8 +23,8 @@ Node *create_Node(){
     }
     return n;
 }
-void create_List(Node *head){
-    Node *temp,*n;
+void create_List(NODE *head){
+    NODE *temp,*n;
     int data,n,i;
     printf("Enter the number of node:");
     scanf("%d",&n);
@@ -45,8 +45,8 @@ void create_List(Node *head){
     else
     printf("linked list not possible");
 }
-void fwd_Traverse(Node *head){
-    Node *temp;
+void fwd_Traverse(NODE *head){
+    NODE *temp;
     if(head==NULL)
     printf("no element");
     else{
@@ -61,7 +61,7 @@ void fwd_Traverse(Node *head){
 }
 int main(){
     int ch,data;
-    Node *n;
+    NODE *n;
     do{
         printf("\nmenu:-\n");
         printf("1:create node\n2:create list\n3:forward traverse\n4:exit\n");
