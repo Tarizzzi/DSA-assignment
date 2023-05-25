@@ -1,90 +1,79 @@
 //linked list
 #include<stdio.h>
-#include<stdbool.h>
 #include<stdlib.h>
 #define max 10
-struct node{
+typedef struct node{
     int info;
     struct node *next;
 }NODE;
 NODE *create_Node(){
+    NODE *nw;
     int data;
-    NODE *n;
-    n=(NODE*)malloc(sizeof(NODE));
-    if(n==NULL){
+    nw=(NODE*)malloc(sizeof(NODE));
+    if(nw==NULL){
         printf("no memory allocated");
         exit(0);
     }
     else{
         printf("Enter the data:");
         scanf("%d",&data);
-        n->info=data;
-        n->=NULL;
+        nw->info=data;
+        nw->next=NULL;
     }
-    return n;
+    return nw;
 }
-void create_List(NODE *head){
-    NODE *temp,*n;
-    int data,n,i;
+NODE *create_List(NODE *head){
+    NODE *temp,*nw;
+    int n,i;
     printf("Enter the number of node:");
     scanf("%d",&n);
     if(n!=0){
-        if(head==NULL){
-            n=create_Node();
-            head=n;
+            nw=create_Node();
+            head=nw;
             temp=head;
-        }
-        else{
             for(i=1;i<n;i++){
-                n=create_Node();
-                temp->next=n;
-                temp=n
+                nw=create_Node();
+                temp->next=nw;
+                temp=nw;
             }
         }
-    }
     else
     printf("linked list not possible");
+    return head;
 }
 void fwd_Traverse(NODE *head){
     NODE *temp;
     if(head==NULL)
     printf("no element");
     else{
-        temp=head;
-        printf("The content of the linked list");
-        while(temp->next!=NULL){
-            printf("%d\t",temp->info);
-            temp=temp->next;
-        }
+        printf("The content of the linked list:\n");
+        for(temp=head;temp->next!=NULL;temp=temp->next)
+        printf("%d\t",temp->info);
         printf("%d",temp->info);
     }
 }
 int main(){
-    int ch,data;
-    NODE *n;
+    int ch;
+    NODE *head;
     do{
         printf("\nmenu:-\n");
-        printf("1:create node\n2:create list\n3:forward traverse\n4:exit\n");
+        printf("1:create list\n2:forward traverse\n3:exit\n");
         printf("Enter your choice:");
         scanf("%d",&ch);
         switch(ch){
             case 1:
-            printf("Enter the data:");
-            scanf("%d",&data);
-            n=create_Node(data);
+            head=create_List(head);
+            break;
             case 2:
-            printf("Enter the element to be inserted in the linked list:");
-            scanf("%d",&n);
-            create_List(n);
+            fwd_Traverse(head);
             break;
             case 3:
-            fwd_Traverse(n);
-            break;
-            case 4:
             printf("program terminated");
             exit(0);
+            default:
+            printf("Invalid choice");
         }
     }
-    while(ch!=4);
+    while(ch!=3);
     return 0;
 }
