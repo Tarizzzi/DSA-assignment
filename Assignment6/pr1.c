@@ -1,7 +1,6 @@
-//linked list
+//linked list implementation
 #include<stdio.h>
 #include<stdlib.h>
-#define max 10
 typedef struct node{
     int info;
     struct node *next;
@@ -15,7 +14,7 @@ NODE *create_Node(){
         exit(0);
     }
     else{
-        printf("Enter the data:");
+        printf("Enter the number:");
         scanf("%d",&data);
         nw->info=data;
         nw->next=NULL;
@@ -23,28 +22,27 @@ NODE *create_Node(){
     return nw;
 }
 NODE *create_List(NODE *head){
-    NODE *temp,*nw;
+    NODE *nw,*temp;
     int n,i;
-    printf("Enter the number of node:");
+    printf("Enter the number of nodes:");
     scanf("%d",&n);
-    if(n!=0){
+    if(n>=0){
+        head=create_Node();
+        temp=head;
+        for(i=1;i<n;i++){
             nw=create_Node();
-            head=nw;
-            temp=head;
-            for(i=1;i<n;i++){
-                nw=create_Node();
-                temp->next=nw;
-                temp=nw;
-            }
+            temp->next=nw;
+            temp=nw;
         }
+    }
     else
-    printf("linked list not possible");
+    printf("No list possible");
     return head;
 }
 void fwd_Traverse(NODE *head){
     NODE *temp;
     if(head==NULL)
-    printf("no element");
+    printf("No content to display");
     else{
         printf("The content of the linked list:\n");
         for(temp=head;temp->next!=NULL;temp=temp->next)
@@ -53,27 +51,8 @@ void fwd_Traverse(NODE *head){
     }
 }
 int main(){
-    int ch;
     NODE *head;
-    do{
-        printf("\nmenu:-\n");
-        printf("1:create list\n2:forward traverse\n3:exit\n");
-        printf("Enter your choice:");
-        scanf("%d",&ch);
-        switch(ch){
-            case 1:
-            head=create_List(head);
-            break;
-            case 2:
-            fwd_Traverse(head);
-            break;
-            case 3:
-            printf("program terminated");
-            exit(0);
-            default:
-            printf("Invalid choice");
-        }
-    }
-    while(ch!=3);
+    head=create_List(head);
+    fwd_Traverse(head);
     return 0;
 }
