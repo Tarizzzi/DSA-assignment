@@ -71,6 +71,7 @@ NODE *insert_End(NODE *head){
         temp=temp->next;
         temp->next=nw;
     }
+    return head;
 }
 int main(){
     int ch;
