@@ -96,10 +96,8 @@ NODE *insert_Location(NODE *head){
 }
 NODE *del_Beg(NODE *head){
     NODE *temp;
-    if(head==NULL){
-        printf("deletion not possible");
-        exit(0);
-    }
+    if(head==NULL)
+    printf("deletion not possible");
     else{
         temp=head;
         head=head->next;
@@ -114,10 +112,8 @@ NODE *del_Location(NODE *head){
     int i,n;
     printf("Enter the node you want to delete:");
     scanf("%d",&n);
-    if(head==NULL){
-        printf("deletion not possible");
-        exit(0);
-    }
+    if(head==NULL)
+    printf("deletion not possible");
     else if(n>0){
         if(n==1){
             del_Beg(head);
@@ -125,7 +121,7 @@ NODE *del_Location(NODE *head){
         }
         else{
             temp2=temp=head;
-            for(i=1;i<n-1;i++)
+            for(i=1;i<n-2;i++)
             temp=temp->next;
             while(temp2->next!=temp)
             temp2=temp2->next;
