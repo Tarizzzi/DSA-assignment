@@ -141,7 +141,7 @@ int main(){
     int ch;
     NODE *head;
     do{
-        printf("\nThe menu:\n1:create list\n2:traverse list\n3:insert at the beggining\n4:insert at the end\n5:Insert at the given location\n6:exit\nEnter your choice:");
+        printf("\nThe menu:\n1:create list\n2:traverse list\n3:insert at the beggining\n4:insert at the end\n5:Insert at the given location\n6:delete at beginning\n7:delete at given location\n8:exit\nEnter your choice:");
         scanf("%d",&ch);
         switch(ch){
             case 1:
@@ -159,12 +159,18 @@ int main(){
             head=insert_Location(head);
             break;
             case 6:
+            head=del_Beg(head);
+            break;
+            case 7:
+            head=delete_Location(head);
+            break;
+            case 8:
             printf("PROGRAM TERMINATED");
             exit(0);
             default:
             printf("Invalid choice");
         }
     }
-    while(ch!=6);
+    while(ch!=8);
     return 0;
 }
