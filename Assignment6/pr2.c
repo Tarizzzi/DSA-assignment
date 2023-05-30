@@ -73,11 +73,30 @@ NODE *insert_End(NODE *head){
     }
     return head;
 }
+NODE *insert_Location(NODE *head){
+    NODE *temp,*nw;
+    int n,i;
+    printf("Enter the node in which you want to insert the element:");
+    scanf("%d",&n);
+    if(n>0){
+        if(n==1)
+        insert_Beg(head);
+        else{
+            temp=head;
+            for(i=1;i<n-1;i++)
+            temp=temp->next;
+            nw=create_Node(head);
+            nw->next=temp->next;
+            temp->next=nw;
+        }
+    }
+    return head;
+}
 int main(){
     int ch;
     NODE *head;
     do{
-        printf("\nThe menu:\n1:create list\n2:traverse list\n3:insert at the beggining\n4:insert at the end\n5:exit\nEnter your choice:");
+        printf("\nThe menu:\n1:create list\n2:traverse list\n3:insert at the beggining\n4:insert at the end\n5:Insert at the given location\n6:exit\nEnter your choice:");
         scanf("%d",&ch);
         switch(ch){
             case 1:
@@ -91,14 +110,16 @@ int main(){
             break;
             case 4:
             head=insert_End(head);
-            break;
             case 5:
+            head=insert_Location(head);
+            break;
+            case 6:
             printf("PROGRAM TERMINATED");
             exit(0);
             default:
             printf("Invalid choice");
         }
     }
-    while(ch!=5);
+    while(ch!=6);
     return 0;
 }
