@@ -115,15 +115,14 @@ NODE *del_Location(NODE *head){
     if(head==NULL)
     printf("deletion not possible");
     else if(n>0){
-        if(n==1){
-            del_Beg(head);
-            exit(0);
-        }
+        if(n==1)
+        del_Beg(head);
         else{
-            temp2=temp=head;
-            for(i=1;i<n-2;i++)
+            temp2=head;
+            temp=head;
+            for(i=1;i<=n-1;i++)
             temp=temp->next;
-            while(temp2->next!=temp)
+            while(temp2!=temp)
             temp2=temp2->next;
             temp2->next=temp->next;
             printf("The deleted element is %d",temp->info);
