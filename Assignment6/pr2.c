@@ -122,7 +122,7 @@ NODE *del_Location(NODE *head){
             temp=head;
             for(i=1;i<=n-1;i++)
             temp=temp->next;
-            while(temp2!=temp)
+            while(temp2->next!=temp)
             temp2=temp2->next;
             temp2->next=temp->next;
             printf("The deleted element is %d",temp->info);
