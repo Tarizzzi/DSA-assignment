@@ -78,7 +78,9 @@ NODE *insert_Location(NODE *head){
     int n,i;
     printf("Enter the node in which you want to insert the element:");
     scanf("%d",&n);
-    if(n>0){
+    if(head==NULL)
+    head=create_Node(head);
+    else if(n>0){
         if(n==1)
         insert_Beg(head);
         else{
@@ -88,6 +90,49 @@ NODE *insert_Location(NODE *head){
             nw=create_Node(head);
             nw->next=temp->next;
             temp->next=nw;
+        }
+    }
+    return head;
+}
+NODE *del_Beg(NODE *head){
+    NODE *temp;
+    if(head==NULL){
+        printf("deletion not possible");
+        exit(0);
+    }
+    else{
+        temp=head;
+        head=head->next;
+        printf("The deleted element is %d",temp->info);
+        temp->next=NULL;
+        free(temp);
+    }
+    return head;
+}
+NODE *delete_Location(NODE *head){
+    NODE *temp;
+    int i,n;
+    printf("Enter the node you want to delete:");
+    scanf("%d",&n);
+    if(head==NULL){
+        printf("deletion not possible");
+        exit(0);
+    }
+    else if(n>0){
+        if(n==1){
+            delete_Beg(head);
+            exit(0);
+        }
+        else{
+            temp2=temp=head;
+            for(i=1;i<n-1;i++)
+            temp=temp->next;
+            while(temp2->next!=temp)
+            temp2=temp2->next;
+            temp2->next=temp->next;
+            printf("The deleted element is %d",temp->info);
+            temp->next=NULL;
+            free(temp);
         }
     }
     return head;
