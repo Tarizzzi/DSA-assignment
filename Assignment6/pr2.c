@@ -109,8 +109,8 @@ NODE *del_Beg(NODE *head){
     }
     return head;
 }
-NODE *delete_Location(NODE *head){
-    NODE *temp;
+NODE *del_Location(NODE *head){
+    NODE *temp,*temp2;
     int i,n;
     printf("Enter the node you want to delete:");
     scanf("%d",&n);
@@ -120,7 +120,7 @@ NODE *delete_Location(NODE *head){
     }
     else if(n>0){
         if(n==1){
-            delete_Beg(head);
+            del_Beg(head);
             exit(0);
         }
         else{
@@ -162,7 +162,7 @@ int main(){
             head=del_Beg(head);
             break;
             case 7:
-            head=delete_Location(head);
+            head=del_Location(head);
             break;
             case 8:
             printf("PROGRAM TERMINATED");
