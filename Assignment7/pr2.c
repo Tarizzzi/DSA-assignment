@@ -70,12 +70,76 @@ void back_Traverse(NODE *head){
         }
     }
 }
+NODE *insert_Beg(NODE *head){
+    NODE *temp,*nw;
+    temp=head;
+    nw=create_Node();
+    if(head==NULL)
+    head=nw;
+    else{
+        nw->next=head;
+        head->prev=nw;
+        head=nw;
+    }
+    return head;
+}
+NODE *insert_End(NODE *head){
+    NODE *nw,*temp;
+    nw=create_Node();
+    if(head==NULL)
+    head=nw;
+    else{
+        while(temp->next!=NULL)
+        temp=temp->next;
+        temp->next=nw;
+        nw->prev=temp;
+    }
+    return head;
+}
+NODE *insert_Loc(NODE *head){
+    NODE *temp,*nw;
+    int n,i;
+    temp=head;
+    if(head==NULL)
+    head=create_Node();
+    else{
+        printf("Enter the location you want to insert:");
+        scanf("%d",&n);
+        nw=create_Node();
+        for(i=1;i<n-1;i++)
+        temp=temp->next;
+        nw->next=temp->next;
+        (temp->next)->prev=nw;
+        temp->next=nw;
+        nw->prev=temp;
+    }
+    return head;
+}
+NODE *after_Node(NODE *head){
+    NODE *temp,*nw;
+    int data,i;
+    temp=head;
+    if(head==NULL)
+    head=create_Node();
+    else{
+        printf("Enter the info of the node after which you want to insert:");
+        scanf("%d",&data);
+        while(temp->info!=data)
+        temp=temp->next;
+        nw=create_Node();
+        nw->next=temp->next;
+        (temp->next)->prev=nw;
+        nw->prev=temp;
+        temp->next=nw;
+    }
+    return head;
+}
 int main(){
     NODE* head;
     int ch;
     head=NULL;
     do{
-        printf("\nTHE MENU:\n1:create list\n2:forward traverse\n3:backward traverse\n4:exit\nEnter your choice:");
+        printf("\nTHE MENU:\n1:create list\n2:forward traverse\n3:backward traverse\n4:insert at he beggining\n5:insert at the end\n6:insert at a given location\n7:insert after a node\n8:exit\nEnter your choice:");
         scanf("%d",&ch);
         switch(ch){
             case 1:
@@ -88,12 +152,24 @@ int main(){
             back_Traverse(head);
             break;
             case 4:
+            head=insert_Beg(head);
+            break;
+            case 5:
+            head=insert_End(head);
+            break;
+            case 6:
+            head=insert_Loc(head);
+            break;
+            case 7:
+            head=after_Node(head);
+            break;
+            case 8:
             printf("PROGRAM TERMINATED");
             exit(0);
             deafult:
             printf("Invalid choice");
         }
     }
-    while(ch!=4);
+    while(ch!=8);
     return 0;
 }
