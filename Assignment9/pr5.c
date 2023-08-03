@@ -12,7 +12,7 @@ int *create_Array(int *a,int n){
 int *insertion_Sort(int *a,int n){
 	int i,j,c;
 	printf("INSERTION SORTED ARRAY:\n");
-	for(i=0;i<n;i++){
+	for(i=1;i<n;i++){
 		for(j=0;j<i;j++){
 			if(a[i]<a[j]){
 				c=a[i];
